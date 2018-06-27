@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}秋城夜话{% endblock %}
+{% block content %}
+    {% if request.session.is_login %}
+        <h1>Hello {{ request.session.user_name }}!欢迎回来!</h1>
+    {% else %}
+        <h1>你™怎么还不登录???</h1>
+    {% endif %}
+    <nav>
+        桃花坞里桃花庵，桃花庵下桃花仙。<br/>
+        桃花仙人种桃树，又摘桃花换酒钱。<br/>
+        酒醒只在花前坐，酒醉还来花下眠。<br/>
+        半醉半醒日复日，花落花开年复年。<br/>
+        但愿老死花酒间，不愿鞠躬车马前。<br/>
+        车尘马足富者事，酒盏花枝隐士缘。<br/>
+        若将显者比隐士，一在平地一在天。<br/>
+        若将花酒比车马，彼何碌碌我何闲。<br/>
+        世人笑我太疯癫，我笑他人看不穿。<br/>
+        不见五陵豪杰墓，无花无酒锄作田。<br/>
+    </nav>
+{% endblock %}
