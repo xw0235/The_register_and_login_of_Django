@@ -9,36 +9,45 @@
             {% endif %} 
             {% csrf_token %}
             <h2 class="text-center">欢迎注册</h2>
-
+            
             <div class="form-group">
-                    {{ register_form.username.label_tag }}
-                    {{ register_form.username}}
-                </div>
-                <div class="form-group">
-                    {{ register_form.password.label_tag }}
-                    {{ register_form.password }}
-                </div>
-                <div class="form-group">
-                    {{ register_form.confirmPassword.label_tag }}
-                    {{ register_form.confirmPassword }}
-                </div>
-                <div class="form-group">
-                    {{ register_form.email.label_tag }}
-                    {{ register_form.email }}
-                </div>
-                <div class="form-group">
-                    {{ register_form.sex.label_tag }}
-                    {{ register_form.sex }}
-                </div>
-                <div class="form-group">
-                    {{ register_form.captcha.errors }}
-                    {{ register_form.captcha.label_tag }}
-                    {{ register_form.captcha }}
-                </div>
+                {{ register_form.username.label_tag }}
+                {{ register_form.username}}
+            </div>
+            <div class="form-group">
+                {{ register_form.password.label_tag }}
+                {{ register_form.password }}
+            </div>
+            <div class="form-group">
+                {{ register_form.confirmPassword.label_tag }}
+                {{ register_form.confirmPassword }}
+            </div>
+            <div class="form-group">
+                {{ register_form.email.label_tag }}
+                {{ register_form.email }}
+            </div>
+            <div class="form-group">
+                {{ register_form.sex.label_tag }}
+                {{ register_form.sex }}
+            </div>
+            <div class="alert alert-danger alert-dismissible",role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <span>bug还™未修复😤请刷新网页更新验证码</span>
+            </div>
+            <div class="form-group">
+                {{ register_form.captcha.error }}
+                {{ register_form.captcha.label_tag }}
+                {{ register_form.captcha }}
+            </div>
+            <nav>
+                <a href="/login/" style="font-size: 16px">已有账号?那你™点什么注册,赶紧™去登录啊!😤</a>
+            </nav>
             <br>
             <button type="reset" class="btn btn-default pull-left">重置</button>
             <button type="submit" class="btn btn-primary pull-right">提交</button>
         </form>
+        <br>
+        <br>
     </div>
 </div>
 {% endblock %}

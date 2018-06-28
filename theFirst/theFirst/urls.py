@@ -26,5 +26,7 @@ urlpatterns = [
     url(r'^logout/', views.logout),
     url(r'^confirm/', views.userConfirms),
     url(r'^welcome/', views.welcome),
+    url(r'^info/', views.userInfo),
+    url(r'^change/', views.changeInfo),
     url(r'^captcha', include('captcha.urls')),
 ]

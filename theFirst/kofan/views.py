@@ -1,12 +1,17 @@
-import hashlib
-import datetime
-import time
+import datetime,hashlib,string,random
 
-from django.shortcuts import render, redirect
-from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
+from django.core.mail import EmailMultiAlternatives
+from django.shortcuts import redirect, render
+from PIL import Image
 
-from . import models, forms
+from . import forms, models
+
+
+# if request.GET.get(newsn) == '1':
+#     csn = CaptchaStore.generate_key()
+#     cimageurl = captcha_image_url(csn)
+#     return HttpResponse(cimageurl)
 
 
 # 定义生成确认码函数
@@ -71,7 +76,7 @@ def login(request):
                 else:
                     message = "密码不正确！"
             except:
-                message = "用户不存在！"
+                message = "用户不存在!你™怎么还不注册??"
         return render(request, 'myKofan/login.html', locals())
     login_form = forms.UserForm()
     return render(request, 'myKofan/login.html', locals())
@@ -153,3 +158,20 @@ def userConfirms(request):
 # 中转页面
 def welcome(request):
     return render(request, 'myKofan/welcome.html')
+
+
+def newName(shuffix,length=32):
+    myStr=string.ascii_letters+'0123456789'
+    return ''.join(random.choice(myStr) for i in range(length))+shuffix
+
+
+def changeIcon():
+    pass
+
+
+def userInfo(request):
+    return render(request,'myKofan/userInfo.html')
+
+
+def changeInfo(request):
+    return render(request,'myKofan/changeInfo.html')

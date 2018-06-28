@@ -9,9 +9,14 @@
         <div class="col-md-4 col-md-offset-4">
             <form class='form-login' action="/login/" method="post">
                 {% if message %}
-                <div class="alert alert-warning">{{ message }}</div>
+                <div class="alert alert-danger">{{ message }}</div>
                 {% endif %}
                 {% csrf_token %}
+                <div class="alert alert-danger alert-dismissible",role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <span>你™怎么还不登录😡</span><br>
+                    <span>不过,你有没有刚才™手滑点成注册😏</span>
+                </div>
                 <h2 class="text-center">欢迎登录</h2>
 
                 <div class="form-group">
